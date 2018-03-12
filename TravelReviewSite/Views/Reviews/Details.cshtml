@@ -1,0 +1,44 @@
+﻿@model TravelReviewSite.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="row review-details">
+
+</div>
+<div>
+    <h4>Review</h4>
+    
+    <div class="row">
+        <div>
+            @Html.DisplayNameFor(model => model.Category.Name) :  @Html.DisplayFor(model => model.Category.Name)
+        </div>
+
+        @*<div>
+            @Html.DisplayFor(model => model.Category.Name)
+        </div>*@
+
+        <div>
+            @Html.DisplayNameFor(model => model.Title) :  @Html.DisplayFor(model => model.Title)
+        </div>
+
+        @*<div>
+            @Html.DisplayFor(model => model.Title)
+        </div>*@
+
+        <div>
+            @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+        </div>
+
+        @*<div>
+            @Html.DisplayFor(model => model.Description)
+        </div>*@
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

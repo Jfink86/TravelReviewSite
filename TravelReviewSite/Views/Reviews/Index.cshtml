@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TravelReviewSite.Models.Review>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LUX TRAVEL REVIEWS</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">*@
+@*<div class="row">
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Category.Name): @Html.DisplayFor(modelItem => item.Category.Name)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(modelItem => item.Title)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(modelItem => item.Description)
+        </div>
+        <div></div>
+    </div>*@
+
+<div class="row review-page-header-img">
+
+</div>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-4">
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Category.Name) : @Html.DisplayFor(modelItem => item.Category.Name)
+        </div>
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Title) : @Html.DisplayFor(modelItem => item.Title)
+        </div>
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(modelItem => item.Description)
+        </div>
+        <div class="row">
+            @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ReviewID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID })
+        </div>
+    </div>
+}
+
+@*</table>*@
